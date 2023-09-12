@@ -15,9 +15,12 @@ html {
  */
 
 body {
+  display: flex;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  
+  flex-direction: column;
 }
 
 /*
@@ -27,5 +30,8 @@ body {
  
 
  .container {
+  display: flex;
   font-family: "Source Sans 3", sans-serif;
+  align-self: center;
+  width: 90%;
  }
