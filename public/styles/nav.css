@@ -6,6 +6,7 @@
   color: #FFFFFF;
   flex-direction: row;
   justify-content: space-between;
+ 
 
 }
 
@@ -35,6 +36,4 @@ span {
   color: red;
   align-self: center;
   flex-direction: row;
-  
-  
  }
