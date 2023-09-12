@@ -1,0 +1,40 @@
+.box {
+  display: flex;
+  height: 120px;
+  padding: 1.5em;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.text {
+  display: flex;
+
+}
+
+span {
+  display: flex;
+  font-family: "bungee", sans-serif;
+  font-size: 60px;
+ }
+
+ .right {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .write {
+  font-size: 20px;
+  height: 30px;
+ }
+
+ .fa-solid {
+  display: flex;
+  color: red;
+  align-self: center;
+  flex-direction: row;
+  
+  
+ }
