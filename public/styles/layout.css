@@ -34,4 +34,45 @@ body {
   align-self: center;
   width: 90%;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;;
+ }
+
+ article {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 600px;
+  padding: 15px;
+  margin: 10px;
+  border-style: solid;
+  border-width: thick;
+  
+ }
+ 
+
+ .tweet-header {
+  display: flex;
+  background-color: #f4f1ec;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 80px;
+
+  
+ }
+
+ .tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+ }
+
+ .printed-tweet {
+  display: flex;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom-width: thick;
+  border-bottom-style: solid;
  }
