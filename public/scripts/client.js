@@ -68,7 +68,7 @@ $(document).ready(function() {
 
   }
 
-    renderTweets(data);
+    //renderTweets(data);
 
 
     $("article").hover(function () {
@@ -102,6 +102,17 @@ $(document).ready(function() {
       $.post("http://localhost:8080/tweets", $("form").serialize());
       console.log($("form").serialize());
     })
+
+
+  const loadTweets = function () {
+
+    $.get("http://localhost:8080/tweets", function (data) {
+      console.log(data)
+      renderTweets(data);
+    })
+  }
+
+  loadTweets();
 
 });
 
