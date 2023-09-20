@@ -9,6 +9,7 @@
 form {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .tweet-counter {
@@ -37,3 +38,13 @@ button {
   color: #FFFFFF;
 }
 
+.error-msg {
+  display: flex;
+  align-self: center;
+  color: red;
+  border-width: thin;
+  border-color: red;
+  border-style: dashed;
+
+
+}

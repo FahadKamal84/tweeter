@@ -7,33 +7,6 @@
 
 $(document).ready(function() {
 
-  
-
-// Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
 
   const renderTweets = function(tweets) {
   // loops through tweets
@@ -104,21 +77,26 @@ $(document).ready(function() {
       $(".fa-heart").attr("style", "color: #1f2551");
     })
 
-
+  
+    $(".error-msg").hide();
     
     $("form").on("submit", function (event) {
       event.preventDefault();
+      $(".error-msg").hide()
       if ($("textarea").val().length === 0) {
-        alert("Your form is empty")
+        $(".error-msg").html("The form is empty. Please type something!");
+        $(".error-msg").show();
         return;
       } 
 
       if ($("textarea").val().length > 140) {
-        alert("Too many characters")
+        $(".error-msg").html("You have gone over the 140 character limit!");
+        $(".error-msg").show();
         return;
       }
 
       $.post("http://localhost:8080/tweets", $("form").serialize())
+        //.then(() => $(".error-msg").hide())
         .then(()=> loadTweets())
       
       
