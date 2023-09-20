@@ -47,7 +47,11 @@ $(document).ready(function() {
     }
   }
 
+  
+  
   const createTweetElement = function(tweet) {
+    console.log(tweet.created_at);
+    const created = timeago.format(new Date(tweet.created_at))
     let $tweet = $(`<article>
     <header class="tweet-header">
       <p class="profile-pic"><img src = "${tweet.user.avatars}">${tweet.user.name}</p>
@@ -55,7 +59,7 @@ $(document).ready(function() {
     </header>
     <p class="printed-tweet">${tweet.content.text}</p>
     <footer class="tweet-footer">
-      <p class="date">${tweet.created_at}</p>
+      <p class="date">${created}</p>
       <p class="icons">
         <i class="fa-solid fa-flag" style="color: #1f2551"></i>
         <i class="fa-solid fa-retweet" style="color: #1f2551"></i>
@@ -99,10 +103,21 @@ $(document).ready(function() {
     
     $("form").on("submit", function (event) {
       event.preventDefault();
-      $.post("http://localhost:8080/tweets", $("form").serialize());
-      console.log($("form").serialize());
-    })
+      if ($("textarea").val().length === 0) {
+        alert("Your form is empty")
+        return;
+      } 
 
+      if ($("textarea").val().length > 140) {
+        alert("Too many characters")
+        return;
+      }
+
+      $.post("http://localhost:8080/tweets", $("form").serialize())
+        .then(()=> loadTweets())
+      
+      
+    });
 
   const loadTweets = function () {
 
@@ -112,7 +127,7 @@ $(document).ready(function() {
     })
   }
 
-  loadTweets();
+  
 
 });
 
