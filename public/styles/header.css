@@ -2,7 +2,8 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
+  justify-content: flex-end;
+  height: 520px;
   background-color: #74a2a8;
   background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
  }
