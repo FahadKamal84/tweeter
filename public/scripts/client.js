@@ -98,6 +98,7 @@ $(document).ready(function() {
       $.post("http://localhost:8080/tweets", $("form").serialize())
         //.then(() => $(".error-msg").hide())
         .then(()=> loadTweets())
+        $("textarea").val("")
       
       
     });
