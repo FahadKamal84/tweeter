@@ -9,18 +9,18 @@ $(document).ready(function() {
 
 
   const renderTweets = function(tweets) {
-  // loops through tweets
-  $(".tweet-container").empty();
+  
+    $(".tweet-container").empty();
     for (let tweet of tweets) {
-    // calls createTweetElement for each tweet
-    let $tweet = createTweetElement(tweet);
+    
+      let $tweet = createTweetElement(tweet);
 
-    // takes return value and appends it to the tweets container
-    $('.tweet-container').append($tweet);
+    
+      $('.tweet-container').append($tweet);
     }
-  }
+  };
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -29,7 +29,7 @@ $(document).ready(function() {
   
   const createTweetElement = function(tweet) {
     console.log(tweet.created_at);
-    const created = timeago.format(new Date(tweet.created_at))
+    const created = timeago.format(new Date(tweet.created_at));
     let $tweet = $(`<article>
     <header class="tweet-header">
       <p class="profile-pic"><img src = "${tweet.user.avatars}">${tweet.user.name}</p>
@@ -44,72 +44,69 @@ $(document).ready(function() {
         <i class="fa-solid fa-heart" style="color: #1f2551"></i>
       </p>
     </footer>
-    </article>`)
+    </article>`);
 
     return $tweet;
 
-  }
+  };
 
-    //renderTweets(data);
+    
 
 
-    $("article").hover(function () {
-      $("article").attr("style", "box-shadow: 10px 5px 5px black");
-    }, function () {
-      $("article").attr("style", null);
-    })
+  $("article").hover(function() {
+    $("article").attr("style", "box-shadow: 10px 5px 5px black");
+  }, function() {
+    $("article").attr("style", null);
+  });
 
-    $(".fa-flag").hover(function () {
-      $(".fa-flag").attr("style", "color: red");
-    }, function () {
-      $(".fa-flag").attr("style", "color: #1f2551");
-    })
+  $(".fa-flag").hover(function() {
+    $(".fa-flag").attr("style", "color: red");
+  }, function() {
+    $(".fa-flag").attr("style", "color: #1f2551");
+  });
 
-    $(".fa-retweet").hover(function () {
-      $(".fa-retweet").attr("style", "color: red");
-    }, function () {
-      $(".fa-retweet").attr("style", "color: #1f2551");
-    })
+  $(".fa-retweet").hover(function() {
+    $(".fa-retweet").attr("style", "color: red");
+  }, function() {
+    $(".fa-retweet").attr("style", "color: #1f2551");
+  });
 
-    $(".fa-heart").hover(function () {
-      $(".fa-heart").attr("style", "color: red");
-    }, function () {
-      $(".fa-heart").attr("style", "color: #1f2551");
-    })
+  $(".fa-heart").hover(function() {
+    $(".fa-heart").attr("style", "color: red");
+  }, function() {
+    $(".fa-heart").attr("style", "color: #1f2551");
+  });
 
   
-    $(".error-msg").hide();
+  $(".error-msg").hide();
     
-    $("form").on("submit", function (event) {
-      event.preventDefault();
-      $(".error-msg").hide()
-      if ($("textarea").val().length === 0) {
-        $(".error-msg").html("The form is empty. Please type something!");
-        $(".error-msg").show();
-        return;
-      } 
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    $(".error-msg").hide();
+    if ($("textarea").val().length === 0) {
+      $(".error-msg").html("The form is empty. Please type something!");
+      $(".error-msg").show();
+      return;
+    }
 
-      if ($("textarea").val().length > 140) {
-        $(".error-msg").html("You have gone over the 140 character limit!");
-        $(".error-msg").show();
-        return;
-      }
+    if ($("textarea").val().length > 140) {
+      $(".error-msg").html("You have gone over the 140 character limit!");
+      $(".error-msg").show();
+      return;
+    }
 
-      $.post("http://localhost:8080/tweets", $("form").serialize())
-        //.then(() => $(".error-msg").hide())
-        .then(()=> loadTweets())
-        $("textarea").val("")
-      
-      
-    });
+    $.post("http://localhost:8080/tweets", $("form").serialize())
+        
+      .then(()=> loadTweets());
+    $("textarea").val("");
+  });
 
-  const loadTweets = function () {
+  const loadTweets = function() {
 
-    $.get("http://localhost:8080/tweets", function (data) {
-      console.log(data)
+    $.get("http://localhost:8080/tweets", function(data) {
       renderTweets(data);
-    })
-  }
+    });
+  };
 
   loadTweets();
 
