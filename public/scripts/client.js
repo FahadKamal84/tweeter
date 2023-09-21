@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   const renderTweets = function(tweets) {
   // loops through tweets
-
+  $(".tweet-container").empty();
     for (let tweet of tweets) {
     // calls createTweetElement for each tweet
     let $tweet = createTweetElement(tweet);
@@ -110,7 +110,7 @@ $(document).ready(function() {
     })
   }
 
-  
+  loadTweets();
 
 });
 
