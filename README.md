@@ -6,8 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["screenshot of main page"]()
-!["screenshot of tweets"]()
+!["screenshot of main page"](https://github.com/FahadKamal84/tweeter/blob/master/docs/tweeter-main.png?raw=true)
+!["screenshot of tweets"]
 
 ## Getting Started
 
