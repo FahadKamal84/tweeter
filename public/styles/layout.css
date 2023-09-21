@@ -58,6 +58,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   height: 80px;
+  width: 550px;
 
   
  }
@@ -75,4 +76,20 @@ body {
   margin-bottom: 15px;
   border-bottom-width: thick;
   border-bottom-style: solid;
+ }
+
+ @media only screen and (min-width: 1024px) {
+
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  
+  }
+
+ }
+
+ @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+
  }
