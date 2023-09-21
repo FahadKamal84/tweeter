@@ -7,8 +7,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 !["screenshot of main page"](https://github.com/FahadKamal84/tweeter/blob/master/docs/tweeter-main.png?raw=true)
-!["screenshot of tweets"]
-
+!["screenshot of tweets"](https://github.com/FahadKamal84/tweeter/blob/master/docs/tweet-box.png?raw=true)
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
